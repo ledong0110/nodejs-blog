@@ -1,0 +1,8 @@
+@import 'variables';
+
+h2 {
+    font-size: 1rem;
+    background-color: $red-color;
+    width: 100px;
+    color: $blue-color;
+}
