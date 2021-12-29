@@ -1,9 +1,7 @@
 const newsRouter = require('./news');
-const siteRouter = require('./site')
-
+const siteRouter = require('./site');
 
 function route(app) {
-    
     // app.get('/', (req, res) => {
     //     res.render('home');
     //     // res.send('<h1 style="color:red;">Hello world</h1>')

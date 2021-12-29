@@ -1,4 +1,4 @@
-const res = require("express/lib/response");
+const res = require('express/lib/response');
 
 class SiteController {
     //[GET] /news
@@ -12,7 +12,4 @@ class SiteController {
     }
 }
 
-
-module.exports = new SiteController;
-
-
+module.exports = new SiteController();

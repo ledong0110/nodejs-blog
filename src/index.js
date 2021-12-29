@@ -5,35 +5,37 @@ const { engine } = require('express-handlebars');
 const app = express();
 const port = 3000;
 
-const route= require('./routes');
+const route = require('./routes');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(express.urlencoded({
-    extended: true
-}));
+app.use(
+    express.urlencoded({
+        extended: true,
+    }),
+);
 app.use(express.json());
 
 //HTTP logger
 // app.use(morgan('combined'));
 
 // Template handlebars
-app.engine('hbs', engine({
-    extname: '.hbs'
-}));
+app.engine(
+    'hbs',
+    engine({
+        extname: '.hbs',
+    }),
+);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 console.log(__dirname);
 
 // Home, search, contact
 
-
-
 //Routes init
 
 route(app);
 
-
-
-
-app.listen(port, () => console.log(`Example app Listening at http://localhost:${port}`));
+app.listen(port, () =>
+    console.log(`Example app Listening at http://localhost:${port}`),
+);
