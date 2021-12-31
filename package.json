@@ -7,7 +7,7 @@
     "node": "16.13.1"
   },
   "scripts": {
-    "start": "node --inspect src/index.js",
+    "start": "nodemon --inspect src/index.js",
     "beautify": "lint-staged",
     "watch": "node-sass --watch src/resources/scss/ -o src/public/css/",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -41,14 +41,15 @@
     "mongoose-sequence": "^5.3.1",
     "mongoose-slug-generator": "^1.0.4",
     "passport": "^0.5.2",
-    "passport-google-oauth20": "^2.0.0"
-  },
-  "devDependencies": {
+    "passport-google-oauth20": "^2.0.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.4",
     "morgan": "^1.10.0",
     "node-sass": "^7.0.1",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1"
+  },
+  "devDependencies": {
+    
   }
 }
