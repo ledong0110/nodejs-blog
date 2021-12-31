@@ -1,47 +1,87 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Dong's Blog</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <div class="container">
+      <a class="navbar-brand" href="/">Dong's Blog</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/news">News</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="search">Search</a>
-      </li>
-    </ul>
-    <script>
-      const $ = document.querySelector.bind(document);
-      const $$ = document.querySelectorAll.bind(document);
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/search">Search</a>
+          </li>
+          <li class="nav-item">
+            <a  data-toggle="modal" data-target="#loginModal" href="" class="nav-link">Log in</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <img class="user-avatar" src ="https://scontent.fsgn5-10.fna.fbcdn.net/v/t1.6435-9/90318274_1536441263185576_8988869000041594880_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=mNz3PZarKY0AX-iDP02&_nc_ht=scontent.fsgn5-10.fna&oh=00_AT_2Sj2fmbb7BZCCw1RChbNErG_s58OHRBt6bkCB-IcXUQ&oe=61F3F830">
+             Đồng Lê
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/courses/create">Course Post</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/me/stored/news">My Posts</a>
+              <a class="dropdown-item" href="/me/stored/courses">My Courses</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Log Out</a>
+            </div>
+          </li>
+        </ul>
+        <script>
+          const currentLocation = location.href;
+          const menuItem = jQuery('.navbar-nav.nav-item a');
+          const menuLength = menuItem.length;
+          for (let i=0; i < menuLength; i++)
+          {
+              console.log(menuItem)
+              if (menuItem[i].href === currentLocation)
+              {
+                  menuItem[i].classList.add('active');
+              }
+          }
 
-      const tabs = $$('.nav-item');
-      const tabActive = $('.nave-item.active');
+        </script>
 
-      tabs.forEach((tab,index) => {
-        tab.onclick = function() {
-          $('.nav-item.active').classList.remove('active');
-          this.classList.add('active');
-        }
-      })
-
-    </script>
-
+      </div>
   </div>
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-title text-center">
+            <h4>Login</h4>
+          </div>
+          <div class="d-flex flex-column text-center">
+            <div class="mb-4 d-flex justify-content-center login-wrapper">
+                    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"> <a href="#" class="btn btn-primary facebook"> <span>Login with Facebook</span> <i class="fab fa-facebook-f"></i> </a> </div>
+                </div>
+                <div class="mb-4 d-flex justify-content-center login-wrapper">
+                    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"> <a href="#" class="btn btn-primary google-plus"> Login with Google <i class="fab fa-google"></i> </a> </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <div class="signup-section">Not a member yet? <a href="#a" class="text-info"> Sign Up</a>.</div>
+        </div>
+    </div>
+  </div>
+  <script>
+      jQuery(document).ready(function() {             
+      jQuery('#loginModal').modal('show');
+        jQuery(function () {
+          jQuery('[data-toggle="tooltip"]').tooltip()
+        })
+      });
+  </script>
 </nav>

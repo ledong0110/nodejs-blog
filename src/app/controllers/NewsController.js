@@ -1,5 +1,3 @@
-const res = require('express/lib/response');
-
 class NewsController {
     //[GET] /news
     index(req, res) {
