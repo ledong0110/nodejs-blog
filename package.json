@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Blog about my personal profile",
   "main": "src/index.js",
+  "engines": {
+    "node": "16.13.1"
+  },
   "scripts": {
     "start": "nodemon --inspect ./src/index.js",
     "beautify": "lint-staged",
