@@ -48,6 +48,6 @@ console.log(__dirname);
 
 route(app);
 
-app.listen(provess.env.PORT || port, () =>
+app.listen(process.env.PORT || port, () =>
     console.log(`App Listening at http://localhost:${port}`),
 );
