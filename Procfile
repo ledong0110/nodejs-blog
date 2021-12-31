@@ -1,1 +1,1 @@
-web: spm run start
+web: npm run start
