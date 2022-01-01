@@ -7,7 +7,7 @@
     "node": "16.13.1"
   },
   "scripts": {
-    "start": "nodemon --inspect src/index.js",
+    "start": "node --inspect src/index.js",
     "beautify": "lint-staged",
     "watch": "node-sass --watch src/resources/scss/ -o src/public/css/",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -47,6 +47,7 @@
     "node-sass": "^7.0.1",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1"
+    
   },
   "devDependencies": {
     "husky": "^7.0.4",
