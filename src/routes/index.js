@@ -12,6 +12,9 @@ function route(app) {
     app.use('/', siteRouter);
     app.use('/courses', coursesRouter);
     app.use('/me', meRouter);
+    app.get('/auth_config.json', (req, res) => {
+        res.sendFile(join(__dirname, 'config/auth_config.json'));
+    });
     // app.get('/news', (req, res) => {
     //     res.render('news');
     //     // res.send('<h1 style="color:red;">Hello world</h1>')

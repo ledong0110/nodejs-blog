@@ -14,7 +14,8 @@ db.connect();
 
 //Static file
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.static(path.join(__dirname, 'app/middleware')));
+app.use(express.static(path.join(__dirname, 'config/auth')));
 //body parser for POST method
 app.use(
     express.urlencoded({
