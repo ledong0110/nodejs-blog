@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const { requiresAuth } = require('express-openid-connect');
 const courseController = require('../app/controllers/CourseController');
 
 // newsController.index();

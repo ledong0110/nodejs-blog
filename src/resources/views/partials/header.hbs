@@ -13,21 +13,22 @@
           <li class="nav-item">
             <a class="nav-link" href="/search">Search</a>
           </li>
-          <li class="nav-item auth-invisible">
+          <li class="nav-item auth-invisible {{#if authenticated}}d-none{{/if}}">
             <a  data-toggle="modal" data-target="#loginModal" href="" class="nav-link">Log in</a>
           </li>
-          <li class="nav-item dropdown auth-visible d-none">
+          <li class="nav-item dropdown auth-visible {{#if authenticated}}{{else}}d-none{{/if}}">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             <img class="user-avatar" src ="">
-              <span id="user-name">Đồng Lê</span> 
+             <img class="user-avatar" src ="{{users.picture}}">
+              <span id="user-name">{{users.name}}</span> 
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/courses/create">Course Post</a>
+              <a class="dropdown-item" href="/profile">Profile</a>
               <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/courses/create">Course Post</a>
               <a class="dropdown-item" href="/me/stored/news">My Posts</a>
               <a class="dropdown-item" href="/me/stored/courses">My Courses</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" onclick="logout()" href="#">Log Out</a>
+              <a class="dropdown-item"  href="/logout_setting">Log Out</a>
             </div>
           </li>
         </ul>
@@ -65,7 +66,7 @@
                     <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"> <a href="#" class="btn btn-primary facebook"> <span>Login with Facebook</span> <i class="fab fa-facebook-f"></i> </a> </div>
                 </div>
                 <div class="mb-4 d-flex justify-content-center login-wrapper">
-                    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"> <a href="#" onclick="login()" class="btn btn-primary google-plus"> Login with Google <i class="fab fa-google"></i> </a> </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"> <a href="/login" class="btn btn-primary google-plus"> Login with Google <i class="fab fa-google"></i> </a> </div>
                 </div>
               </div>
           </div>

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { requiresAuth } = require('express-openid-connect');
 
 const meController = require('../app/controllers/MeController');
 
