@@ -12,7 +12,7 @@ function route(app) {
     app.use('/news', newsRouter);
     app.use('/', siteRouter);
     app.use('/courses', coursesRouter);
-    app.use('/me', claimEquals('admin', true), meRouter);
+    app.use('/me', meRouter);
 
     // app.get('/news', (req, res) => {
     //     res.render('news');
