@@ -24,7 +24,6 @@ const config = {
         login: false,
         postLogoutRedirect: '/logout_setting',
     },
-    attemptSilentLogin: true,
     authorizationParams: {
         connection: 'google-oauth2',
     },
