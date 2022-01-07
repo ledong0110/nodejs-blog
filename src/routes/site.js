@@ -7,7 +7,7 @@ const siteController = require('../app/controllers/SiteController');
 // newsController.index();
 router.get('/search', siteController.search);
 router.get('/', siteController.home);
-router.get('/profile', requiresAuth(), siteController.profile);
-router.get('/login', requiresAuth(), siteController.login);
+router.get('/profile', siteController.profile);
+router.get('/login', siteController.login);
 
 module.exports = router;
