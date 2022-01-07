@@ -13,6 +13,10 @@ function route(app) {
     app.use('/', siteRouter);
     app.use('/courses', coursesRouter);
     app.use('/me', meRouter);
+    app.get('*', function (req, res) {
+        res.status = 404;
+        res.render('notfound');
+    });
 
     // app.get('/news', (req, res) => {
     //     res.render('news');

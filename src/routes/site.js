@@ -9,5 +9,7 @@ router.get('/search', siteController.search);
 router.get('/', siteController.home);
 router.get('/profile', siteController.profile);
 router.get('/login', siteController.login);
+router.get('/login_setting', siteController.login_setting);
+router.get('/logout_setting', siteController.logout_setting);
 
 module.exports = router;
