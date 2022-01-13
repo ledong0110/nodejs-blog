@@ -12,10 +12,21 @@ class SiteController {
         //     else res.status(400).json({error: 'ERROR!!!'});
         // })
         // res.send(`hello ${req.oidc.user.name}`);
+        function shorten(str, maxLen, separator = ' ') {
+            if (str.length <= maxLen) return str;
+            return str.substr(0, str.lastIndexOf(separator, maxLen));
+        }
         Course.find({})
             .then((courses) => {
+                courses = multipleMongooseToObject(courses);
+
+                courses.map((course) => {
+                    course.description = shorten(course.description, 100);
+                    return course;
+                });
+
                 res.render('home', {
-                    courses: multipleMongooseToObject(courses),
+                    courses,
                 });
             })
             .catch(next);

@@ -1,21 +1,29 @@
-<div class="mt-4">
-    <div class="row">
-        {{#each courses}}
-        <div class="col-sm-6 col-lg-4">
-            <div class="card card-course-item" style="width: 18rem;">
-                <a href="/courses/{{this.slug}}">
-                    <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
-                </a>
+<div class="text-center mt-4">
+    <h4 class="mb-5 text-center"><strong>Latest courses</strong></h4>
+        <div class="row">
+            {{#each courses}}
+            
+            <div class="col-lg-4 col-md-12 mb-4 d-flex align-items-stretch">
+                <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <img src="{{this.image}}" class="img-fluid">
+                    <a href="/courses/{{this.slug}}">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                </div>
                 <div class="card-body">
                     <a href="/courses/{{this.slug}}">
-                        <h5 class="card-title">{{this.name}}</h5>
-                    </a>
-                    
-                    <p class="card-text">{{this.description}}</p>
-                    <a href="" class="btn btn-primary">Buy</a>
+                            <h5 class="card-title">{{this.name}}</h5>
+                        </a>
+                    <p class="card-text">
+                    {{this.description}}<span style="color:gray">...</span>
+                    </p>
+                    <a href="/courses/{{this.slug}}" class="btn btn-primary">Read</a>
+                </div>
                 </div>
             </div>
-        </div>
-        {{/each}}
-    </div>  
+            {{/each}}
+            
+        </div>  
+    </div>
 </div>

@@ -16,7 +16,7 @@ const db = require('./config/db');
 const config = {
     authRequired: false,
     auth0Logout: true,
-    baseURL: 'https://dong-blog-web.herokuapp.com',
+    baseURL: 'http://localhost:3000',
     clientID: 'yfaaZnedjIAkRN3Pnj8yccdsw6dLDUuq',
     issuerBaseURL: 'https://dev-4kc217q2.us.auth0.com',
     secret: '-5YfLejfmuK2TuaaOdElTUn5z6GmKrWrjRBcM5BqP51wKTTWtQBBgmRHtkus1axK',
